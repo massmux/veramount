@@ -29,6 +29,8 @@ sudo apt-get install yubikey-manager yubikey-manager-qt
 sudo apt-get install pass
 ```
 
+ Obviously veracrypt software must be also installed. Please refer to: https://www.veracrypt.fr/en/Downloads.html
+
 ## Generate the GPG key
 
  Generate a new GPG 4096 RSA key to use for credentials encryption
@@ -43,7 +45,7 @@ addkey
 save
 ```
 
-## backup your keys
+## Backup your keys
 
  Backup your private key somewhere safe
 
@@ -63,7 +65,7 @@ key-attr
 #change length to 4096 and exit
 ```
 
-## move the gpg key to yubikey device
+## Move/install the gpg key to yubikey device
 
  Move the key to yubikey device
 
@@ -76,7 +78,7 @@ gpg> <repeat for the other keys>
 gpg> save
 ```
 
-## activate pass software
+## Activate pass software
 
  Configure your pass software in order to use the GPG key (inside yubikey) for passwords encryption. This is a key step
 
