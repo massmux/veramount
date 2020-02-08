@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# umounting verycrypt file volume while reading authentication data from pass protected though GPG key stored on hardware yubikey
+# needs: "shred" command utility, "pass" utility
+# runs: linux
+# author: Massimo Musumeci massimo@denali.swiss
+
+KEYFILE="vra.key" #keyfile name
+VOLUMEFILE="/home/yourpath/vol/vol0" # location of volume veracrypt file
+MOUNTPOINT="/media/veracrypt1" # mountpoint for veracrypt file
+
+echo "stopping tor if running"
+ps -ef | grep './tor --SOCKSPort' | grep -v grep | awk '{print $2}' | xargs kill -9
+
+echo "cleaning keyfile"
+echo "overwriting keyfile"
+for i in {1..30}
+do
+   therandom=$((1 + RANDOM % 1000))
+   echo "Creating $i times $therandom" | sha256sum > $KEYFILE
+done
+
+echo "shreding file"
+/usr/bin/shred -n 100 -u $KEYFILE
+
+echo "dismounting volume $VOLUMEFILE"
+veracrypt --dismount $MOUNTPOINT
+
+
