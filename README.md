@@ -11,6 +11,7 @@ This procedure and script is for managing an encrypted veracrypt filesystem with
  What is needed:
 
  - Ubuntu whatever flavor
+ - veracrypt filesystem encryption software
  - yubikey 5 NFC device
  - pass
  - GPG2
