@@ -1,4 +1,4 @@
-# veramount - mounting encrypted veracrypt volume with yubikey
+# veramount - mounting encrypted veracrypt vol with yubikey
 
 ## goal
 
