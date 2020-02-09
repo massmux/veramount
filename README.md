@@ -99,7 +99,7 @@ pass init "GPG-ID-HERE"
 
 ## Contact me
 
- massmux@tuta.io
+ massmux (at) tuta.io
 
- massimo@denali.swiss
+ massimo (at) denali.swiss
 
