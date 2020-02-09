@@ -97,3 +97,9 @@ pass init "GPG-ID-HERE"
  NB: It's suggested to set a password and a keyfile content in such a way you have a procedure to recover. For example you can use a words-map like bitcoin BIP39 or some other mechanism like that. Backup should be always on an offline paper.
 
 
+## Contact me
+
+ massmux@tuta.io
+
+ massimo@denali.swiss
+
