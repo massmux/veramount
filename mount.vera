@@ -2,32 +2,16 @@
 
 
 # mounting verycrypt file volume while reading authentication data from pass protected though GPG key stored on hardware yubikey
-# needs: "shred" command utility, "pass" utility
+# needs: "pass" utility: sudo apt-get install pass, see README for configuring GPG key on yubikey
 # runs: linux
 # author: Massimo Musumeci massimo@denali.swiss
 
 KEYFILE="vra.key" #keyfile name
 KEYFILEDATA="0level/vera/keyfile" # keyfile data path inside "pass"
 PASSWORDDATA="0level/vera/vol0password" # password path inside "pass"
-VOLUMEFILE="/home/yourpath/vol/vol0" # location of volume veracrypt file
+VOLUMEFILE="/home/volumefilepath/vol0" # location of volume veracrypt file
 MOUNTPOINT="/media/veracrypt1" # mountpoint for veracrypt file
 
-echo "retrieving access data"
-pass $KEYFILEDATA > $KEYFILE
-thepass=$(pass $PASSWORDDATA)
-
 echo "mounting $VOLUMEFILE volume"
-sudo veracrypt --mount $VOLUMEFILE $MOUNTPOINT --keyfiles=$KEYFILE --password=$thepass
-
-echo "cleaning access data"
-echo "overwriting data"
-for i in {1..30}
-do
-   therandom=$((1 + RANDOM % 1000))
-   echo "Creating $i times $therandom" | sha256sum > $KEYFILE
-   thepass=$therandom
-done
-
-echo "shreding file"
-/usr/bin/shred -n 100 -u $KEYFILE
+pass $KEYFILEDATA |sudo veracrypt --mount $VOLUMEFILE $MOUNTPOINT --keyfiles=/dev/stdin --password=`pass $PASSWORDDATA`
 
