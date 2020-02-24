@@ -54,6 +54,11 @@ save
 gpg --export-secret-keys --armor your_email@key_identifier > \<your_email@key_identifier\>.private.gpg-key
 gpg --export --armor your_email@key_identifier > \<your_email@key_identifier\>.public.gpg-key
 ```
+ or simply run the provided micro-script:
+
+```console
+./keysbackup
+```
 
 ## Change the key length on yubikey to 4096
 

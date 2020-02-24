@@ -1,0 +1,11 @@
+#!/bin/bash
+
+## backup of GPG private key. it works both for a locally stored key or yubikey stored private key
+## when run, the private key passphrase is asked for export
+
+keyemail="massmux@tuta.io"  # this email identifies the key
+
+echo "exporting private key"
+gpg --export-secret-keys --armor $keyemail > $keyemail.private.gpg-key
+echo "exporting public key"
+gpg --export --armor $keyemail > $keyemail.public.gpg-key
