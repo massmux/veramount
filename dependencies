@@ -1,0 +1,12 @@
+#!/bin/bash
+
+## just install needed software
+
+echo "main dependencies are going to be met"
+sudo apt-get install gnupg2
+sudo apt-get install scdaemon
+sudo apt-add-repository ppa:yubico/stable
+sudo apt update
+sudo apt-get install yubikey-manager yubikey-manager-qt
+sudo apt-get install pass
+

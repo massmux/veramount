@@ -19,15 +19,10 @@ This procedure and script is for managing an encrypted veracrypt filesystem with
 
 ## Install software on Ubuntu
 
- Install all the software you need
+ Install all the software you need, by running the micro-script
 
 ```console
-sudo apt-get install gnupg2
-sudo apt-get install scdaemon
-sudo apt-add-repository ppa:yubico/stable
-sudo apt update
-sudo apt-get install yubikey-manager yubikey-manager-qt
-sudo apt-get install pass
+./dependencies
 ```
 
  Obviously veracrypt software must be also installed. Please refer to: https://www.veracrypt.fr/en/Downloads.html
@@ -48,13 +43,7 @@ save
 
 ## Backup your keys
 
- Backup your private key somewhere safe
-
-```console
-gpg --export-secret-keys --armor your_email@key_identifier > \<your_email@key_identifier\>.private.gpg-key
-gpg --export --armor your_email@key_identifier > \<your_email@key_identifier\>.public.gpg-key
-```
- or simply run the provided micro-script:
+ Backup your private key somewhere safe, by running the provided micro-script
 
 ```console
 ./keysbackup
