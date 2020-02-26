@@ -10,7 +10,7 @@ This procedure and script is for managing an encrypted veracrypt filesystem with
 
  What is needed:
 
- - Ubuntu whatever flavor
+ - Ubuntu whatever flavor, tested on lubuntu 19.04
  - veracrypt filesystem encryption software
  - yubikey 5 NFC device
  - pass

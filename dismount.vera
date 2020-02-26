@@ -5,7 +5,8 @@
 # runs: linux
 # author: Massimo Musumeci massimo@denali.swiss
 
-KEYFILE="vra.key" #keyfile name
+KEYFILE="vra.key" #keyfile name. notice: in this version the keyfile is passed through the stdin, so a file is no more necessary. left here only for clarifica
+tion for who are installing from scratch
 VOLUMEFILE="/home/volumefilepath/vol0" # location of volume veracrypt file
 MOUNTPOINT="/media/veracrypt1" # mountpoint for veracrypt file
 

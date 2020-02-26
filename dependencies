@@ -3,10 +3,14 @@
 ## just install needed software
 
 echo "main dependencies are going to be met"
+echo "installing gpg2"
 sudo apt-get install gnupg2
+echo "installing scdaemon"
 sudo apt-get install scdaemon
+echo "installing yubikey software"
 sudo apt-add-repository ppa:yubico/stable
 sudo apt update
 sudo apt-get install yubikey-manager yubikey-manager-qt
+echo "installing pass"
 sudo apt-get install pass
 
