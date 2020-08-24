@@ -93,7 +93,5 @@ pass init "GPG-ID-HERE"
 
 ## Contact me
 
- massmux (at) tuta.io
-
- massimo (at) denali.swiss
+ we talk about these topics on this youtube channel: http://www.youtube.com/c/MassimoSMusumeci and also at the telegram group: https://t.me/BitcoinSecPriv . Please refer also to resources published on the website https://www.massmux.com for more infos or contact me massimo (at) denali.swiss or go (at) massmux.com
 
